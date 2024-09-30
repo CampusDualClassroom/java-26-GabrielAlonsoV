@@ -15,7 +15,6 @@ public class Contact implements ICallActions {
         this.code = generateContactCode();
     }
 
-    // Generar código según las reglas descritas
     private String generateContactCode() {
         // Eliminar signos diacríticos y espacios extraños
         String normalizedSurnames = Normalizer.normalize(surnames, Normalizer.Form.NFD);
@@ -35,7 +34,7 @@ public class Contact implements ICallActions {
             // Si tiene más de un apellido, agregar primera letra del primero y el resto del segundo
             codeBuilder.append(surnameParts[0].toLowerCase().charAt(0));
 
-            // Concatenar el resto de los apellidos (sin espacios)
+            // Concatenar el resto de los apellidos
             for (int i = 1; i < surnameParts.length; i++) {
                 codeBuilder.append(surnameParts[i].toLowerCase());
             }

@@ -10,13 +10,13 @@ public class Phonebook {
         contacts = new HashMap<>();
     }
 
-    // Añadir un contacto al listín
+    // Añadir un contacto a la lista
     public void addContact(Contact contact) {
         contacts.put(contact.getCode(), contact);
         System.out.println("Contact added with code: " + contact.getCode());
     }
 
-    // Mostrar todos los contactos en el listín
+    // Mostrar todos los contactos en la lista
     public void showPhonebook() {
         if (contacts.isEmpty()) {
             System.out.println("Phonebook is empty.");
@@ -37,7 +37,7 @@ public class Phonebook {
         }
     }
 
-    // Obtener los contactos (necesario para los tests)
+    // Obtener los contactos
     public Map<String, Contact> getData() {
         return contacts;
     }
