@@ -34,7 +34,7 @@ public class Contact implements ICallActions {
             // Si tiene más de un apellido, agregar primera letra del primero y el resto del segundo
             codeBuilder.append(surnameParts[0].toLowerCase().charAt(0));
 
-            // Concatenar el resto de los apellidos
+            // Concatenar el resto de los apellidos (sin espacios)
             for (int i = 1; i < surnameParts.length; i++) {
                 codeBuilder.append(surnameParts[i].toLowerCase());
             }
@@ -45,16 +45,19 @@ public class Contact implements ICallActions {
 
     @Override
     public void callMyNumber() {
-        System.out.println("Calling myself at " + phone);
+        // Imprimir el mensaje que indica que se está llamando a sí mismo
+        System.out.println("Calling myself, " + name + " " + surnames + ", at " + phone);
     }
 
     @Override
     public void callOtherNumber(String number) {
+        // Imprimir el mensaje que indica que está llamando a otro número
         System.out.println("Calling " + name + " " + surnames + " at " + number);
     }
 
     @Override
     public void showContactDetails() {
+        // Mostrar detalles del contacto
         System.out.println("Name: " + name);
         System.out.println("Surnames: " + surnames);
         System.out.println("Phone: " + phone);
